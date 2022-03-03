@@ -8,9 +8,9 @@ public class ImportedProduct extends Product {
 		super();
 	}
 
-	public ImportedProduct(String name, Double price, Double cumstomsFee) {
+	public ImportedProduct(String name, Double price, Double customsFee) {
 		super(name, price);
-		this.customsFee = cumstomsFee;
+		this.customsFee = customsFee;
 	}
 
 	public double totalPrice() {
