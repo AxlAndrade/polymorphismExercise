@@ -2,7 +2,7 @@ package entities;
 
 public class ImportedProduct extends Product {
 
-	private Double cumstomsFee;
+	private Double customsFee;
 	
 	public ImportedProduct() {
 		super();
@@ -10,9 +10,19 @@ public class ImportedProduct extends Product {
 
 	public ImportedProduct(String name, Double price, Double cumstomsFee) {
 		super(name, price);
-		this.cumstomsFee = cumstomsFee;
+		this.customsFee = cumstomsFee;
 	}
 
-	public Double totalPrice();
+	public double totalPrice() {
+		return price + customsFee;
+	}
+	
+	@Override
+	public String priceTag() {
+		return  name + " $ "
+				+ totalPrice() 
+				+ " (customs fee: $ "
+				+ customsFee;
+	}
 	
 }
